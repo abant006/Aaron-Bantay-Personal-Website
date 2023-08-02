@@ -3,169 +3,354 @@
 <head>
     <meta charset="UTF-8">
     <title>Aaron Bantay</title>
+
+    <style>
+        /* Adding custom font */
+        @font-face{
+            font-family: helvetica-neue-medium;
+            src: url(/fonts/Helvetica\ Neue\ Medium\ Extended.ttf);
+        }
+        
+        /* Adding another custom font */
+        @font-face{
+            font-family: Gyahegi;
+            src: url(/fonts/Gyahegi.otf);
+        }
+
+        /* Adding another custom font */
+        @font-face{
+            font-family: Misto;
+            src: url(/fonts/Misto.ttf)
+        }
+
+        html {
+            font-size: 16px; /* setting a universal font size to be adjusted using rem */
+        }
+
+        body {
+            font-size: 1rem;
+            font-family: helvetica-neue-medium, Arial, sans-serif;
+        }
+
+        p {
+            line-height: 1.5rem;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            padding: 0;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Concerning the main header */
+
+        #name {
+            font-size: 4rem;
+            font-family: Misto, helvetica-neue-medium, Arial, sans-serif;
+            margin-top: 20px;
+            margin-bottom: 0;
+            
+        }
+
+        #main-header { /* div container for the entire heading section (name, subheading, socials) */
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        #subheading {
+            font-size: 1.2rem; /* A little size change to my sub heading */
+            text-align: center;
+            margin-top: 0.5px;
+            margin-bottom: 10px;
+        }
+
+        #socials { /* for the socials list, I am removing the bullets and removing extra padding/margin space */
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex; /* Using flex box to make column list into horizontal */
+            justify-content: center; /* centering the list to the middle of the div box */
+        }
+
+        /* Add some spacing between each list item in socials list */
+        #socials li {
+            margin-right: 10px;
+        }
+
+        /* since I added space between EACH list item, I need to remove that space from the last one */
+        #socials li:last-child {
+            margin-right: 0;
+        }
+
+        /* Headshot image and About me section */
+
+        #image-about-me {
+            display: flex; /* Using flex box to line items in div horizontally */
+            align-items: flex-start; /* Allign items starting from the top of the box */
+            margin: 0 20px 30px 30px; /* standard top bottom left right margin values */
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        
+        #image-about-me img {
+            margin-right: 20px; /* Space between photo and about me section */
+            align-self: center; /* Only want to align the picture to the middle left, since we already align-items to the top in main div container */
+        }
+
+        #image-about-me #paragraph-area {
+            display: flex;
+            flex-direction: column; /* Stack the text elements vertically */
+        }
+
+        /* RULES FOR COMMON MARGIN/PADDING EXTENSIONS SITE WIDE */
+        
+        .minimal-padding-bot-extend {
+            padding-bottom: 10px;
+        }
+
+        .medium-padding-bot-extend {
+            padding-bottom: 20px;
+        }
+
+        .minimal-margin-extend {
+            margin-top: 40px;
+            margin-bottom: 40px;
+            margin-left: 25px;
+            margin-right: 25px;
+        }
+
+        /* Work Experience */
+
+        #work-experience-section {
+            /*background-color: aquamarine;*/ /*FOR TESTING USES */
+        }
+
+        /* Indenting descriptions in tables where the td colspan value = 2 */
+        td[colspan="2"] {
+            padding-left: 20px;
+            text-align: justify;
+            line-height: 1.75rem;
+        }
+
+        .right {
+            text-align: right;
+        }
+        
+        .left {
+            text-align: left;
+        }
+        
+
+        /* Education Section */
+
+        #education-section {
+            display: flex; /* using flex box to "fill in" extra space taken up by items inside the box  (i.e shifting items to end of the box)*/
+            flex-direction: column; /* default is row but we want column */
+        }
+
+        #education-section tr td:first-child { /* Only want to indent the first td item in each row */
+            padding-left: 20px;
+        }
+
+        /* Coursework Section */
+
+        #coursework-section li, #skills-section li{ /* Changing the bullet type to a square and adding space between each bullet point */
+            list-style-type: square;
+            margin-bottom: 10px;
+        }
+
+        #coursework-section li:last-child, #skills-section li:last-child { /* just removing the margin added to the last list item (bottom one) */
+            margin-bottom: 0;
+        }
+
+        /* Skills Section */
+
+
+        /* Combining skills and coursework section to use a flexbox to line them horizontally */
+        #coursework-skills-container {
+            display: flex;
+            padding: 0;
+        }
+
+        /* add some space between */
+        #coursework-section {
+            margin-right: 340px;
+            padding: 0;
+        }
+
+        /* Projects Section */
+
+    </style>
+
 </head>
 
 <body>
-    <!-- Adding photo of me and my name -->
-    <!-- Opt for having classes be colors I want text to be? -->
-    <img src="/images/AaronHeadshot.jpg" alt="Aaron Bantay Headshot Photo" width="225.14" height="281.43">
-    <h1 id="name" class="blue">Aaron Bantay</h1>
 
-    <!-- socials; using an unordered list for organization/look wise for CSS -->
-    <ul id="socials"> <!-- Think about making the words icons instead -->
-        <li><a href="https://github.com/abant006" target="_vblank">Github</a></li>
-        <li><a href="https://www.linkedin.com/in/aaron-bantay-978097226/" target="_vblank">LinkedIn</a></li>
-        <li><a href="https://www.instagram.com/aaucci/?hl=en" target="_vblank">Personal Instagram</a></li>
-        <li><a href="https://www.instagram.com/flmcci/?hl=en" target="_vblank">Film Page</a></li>
-        <li><a href="https://www.instagram.com/rugccci/?hl=en" target="_vblank">Rug Account</a></li>
-        <li><a href="mailto:aaronbantay@gmail.com">Email</a></li>
-    </ul>
+    <div id="main-header">
+        <h1 id="name" class="blue">Aaron Bantay</h1>
 
-    <!-- Subheading -->
-    <h2 id="subheading" class="blue">Student of Computer Science at University of California, Riverside</h2>
+        <!-- Subheading -->
+        <h2 id="subheading" class="blue">Student of Computer Science at University of California, Riverside</h2>
 
-    <!-- About section -->
-    <h3 id="about" class="blue">About me</h3>
-    <p> Hello, My name is Aaron Bantay, and I would first like to thank you for taking the time to view
-        my website. I was born and raised in San Diego, California, but I am currently a student at the <span class="maroon bold-element">University of California, Riverside</span>, studying computer science.</p>
-    <p> Aside from coding, I enjoy shooting <span class="maroon bold-element">film photography</span>. Although I have a couple of rolls shot under my belt,
-        I am still looking to improve my craft. I also enjoy making <span class="maroon bold-element">rugs/tufting</span>. It's been an interest of mine for a while,
-        and I've finally gotten the chance to do so! My favorite sports team is the <span class="maroon bold-element">San Diego Padres</span>, but I also follow <span class="maroon bold-element">AC Milan</span> in Serie A. As far
-        as music goes, I listen almost any chance I can get (I am probably listening as I am writing this!). I primarily enjoy <span class="maroon bold-element">Hip Hop, Indie Pop, Jazz and 
-        R&B</span>. My favorite artists are <span class="maroon bold-element">Frank Sinatra, Bill Evans, Travis Scott, and Wave to Earth</span>. As a way to wind down, I read books! I am currently reading
-        <span class="maroon bold-element">"The Way of Kings"</span> by Brandon Sanderson.
-    </p>
-    <p> I hope to be able to use my skills in web development to create websites for my hobbies. A website showcasing my film photos is one on my todo list! Please keep an eye out for that!</p>
+        <!-- socials; using an unordered list for organization/look wise for CSS -->
+        <ul id="socials"> <!-- Think about making the words icons instead -->
+            <li><a href="https://github.com/abant006" target="_vblank">Github</a></li>
+            <li><a href="https://www.linkedin.com/in/aaron-bantay-978097226/" target="_vblank">LinkedIn</a></li>
+            <li><a href="https://www.instagram.com/aaucci/?hl=en" target="_vblank">Personal Instagram</a></li>
+            <li><a href="https://www.instagram.com/flmcci/?hl=en" target="_vblank">Film Page</a></li>
+            <li><a href="https://www.instagram.com/rugccci/?hl=en" target="_vblank">Rug Account</a></li>
+            <li><a href="mailto:aaronbantay@gmail.com">Email</a></li>
+        </ul>
+    </div>
+
+    <div id="image-about-me">
+        <!-- Adding photo of me and my name -->
+        <!-- Opt for having classes be colors I want text to be? -->
+        <img src="/images/AaronHeadshot.jpg" alt="Aaron Bantay Headshot Photo" width="225.14" height="281.43">
+
+        <div id="paragraph-area">
+            <!-- About section -->
+            <h3 id="about" class="blue">About me</h3>
+            <p> Hello, My name is Aaron Bantay, and I would first like to thank you for taking the time to view
+                my website. I was born and raised in San Diego, California, but I am currently a student at the <span class="maroon bold-element">University of California, Riverside</span>, studying computer science.</p>
+            <p> Aside from coding, I enjoy shooting <span class="maroon bold-element">film photography</span>. Although I have a couple of rolls shot under my belt,
+                I am still looking to improve my craft. I also enjoy making <span class="maroon bold-element">rugs/tufting</span>. It's been an interest of mine for a while,
+                and I've finally gotten the chance to do so! My favorite sports team is the <span class="maroon bold-element">San Diego Padres</span>, but I also follow <span class="maroon bold-element">AC Milan</span> in Serie A. As far
+                as music goes, I listen almost any chance I can get (I am probably listening as I am writing this!). I primarily enjoy <span class="maroon bold-element">Hip Hop, Indie Pop, Jazz and 
+                R&B</span>. My favorite artists are <span class="maroon bold-element">Frank Sinatra, Bill Evans, Travis Scott, and Wave to Earth</span>. As a way to wind down, I read books! I am currently reading
+                <span class="maroon bold-element">"The Way of Kings"</span> by Brandon Sanderson.
+            </p>
+            <p> I hope to be able to use my skills in web development to create websites for my hobbies. A website showcasing my film photos is one on my todo list! Please keep an eye out for that!</p>
+        </div> 
+    </div>
 
     <!-- Maybe add some photos here showing a few film photos and some rugs?? -->
 
-    <!-- Work Experience -->
-    <h3 id="work-experience" class ="blue">Work Experience</h3>
-    <table>
-        <tr> <!-- opt for using a class to specify bold elements instead of using html for it -->
-            <td><span class="green bold-element">Brookdale San Marcos</span>, Food Server</td>
-            <td class="right">November 2019 - February 2020</td> <!-- Date class for CSS aligning purposes -->
-        </tr>
-        <tr>
-            <td colspan="2">Diligently communicated with the residents and took their food orders. Worked closely with the chefs in the kitchen to make sure each resident's meal was prepared correctly.
-                            Cleaned and organized the kitchen and dining area for the opening workers, ensuring a smooth start for the next day of work.</td>
-        </tr>
-    </table>
+    <div id="work-experience-section" class="minimal-margin-extend">
+        <!-- Work Experience -->
+        <h3 id="work-experience" class ="blue">Work Experience</h3>
+        <table>
+            <tr> <!-- opt for using a class to specify bold elements instead of using html for it -->
+                <td class="left minimal-padding-bot-extend"><span class="green bold-element">Brookdale San Marcos</span>, Food Server</td>
+                <td class="right minimal-padding-bot-extend">November 2019 - February 2020</td> <!-- Date class for CSS aligning purposes -->
+            </tr>
+            <tr>
+                <td colspan="2">Diligently communicated with the residents and took their food orders. Worked closely with the chefs in the kitchen to make sure each resident's meal was prepared correctly.
+                                Cleaned and organized the kitchen and dining area for the opening workers, ensuring a smooth start for the next day of work.</td>
+            </tr>
+        </table>
+    </div>
 
-    <!-- Education -->
-    <h3 id="education" class="blue">Education</h3>
-    <table>
-        <tr>
-            <td class="left">Associates Degree for Transfer, Mathematics</td>
-            <td class="center">Palomar College</td>
-            <td class="right">2019 - 2021</td>
-        </tr>
-        <tr>
-            <td class="left">Bachelor of Science, Computer Science <span class="bold-element">(In Progress)</span></td>
-            <td class="center">University of California, Riverside</td>
-            <td class="right">2021 - Present</td>
-        </tr>
-    </table>
+    <div id="education-section" class="minimal-margin-extend">
+        <!-- Education -->
+        <h3 id="education" class="blue">Education</h3>
+        <table>
+            <tr>
+                <td class="left medium-padding-bot-extend">Associates in Science for Transfer, Mathematics</td>
+                <td class="center medium-padding-bot-extend">Palomar College</td>
+                <td class="right medium-padding-bot-extend">2019 - 2021</td>
+            </tr>
+            <tr>
+                <td class="left">Bachelor of Science, Computer Science <span class="bold-element">(In Progress)</span></td>
+                <td class="center">University of California, Riverside</td>
+                <td class="right">2021 - Present</td>
+            </tr>
+        </table>
+    </div>
+    
+    <div id="coursework-skills-container" class="minimal-margin-extend">
+        <div id="coursework-section">
+            <!-- Coursework -->
+            <h3 id="coursework" class="blue">Coursework</h3>
+            <ul id="grid-coursework-container">
+                <li>Software Construction</li>
+                <li>Database Management Systems</li>
+                <li>Intro to Artificial Intelligence</li>
+                <li>Virtual Reality</li>
+                <li>Data Analysis Methods</li>
+                <li>Intermediate Data Structures & Algorithms</li>
+                <li>Design of Operating Systems</li>
+                <li>Design & Architecture of Computer Systems</li>
+                <li>Intro to Embedded Systems</li>
+            </ul>
+        </div>
+        
+    
+        <div id="skills-section">
+            <!-- Skills -->
+            <h3 id="skills" class="blue">Skills</h3>
+            <ul id="grid-skills-container">
+                <li>C++</li>
+                <li>HTML</li>
+                <li>SQL</li>
+                <li>Git/Github</li>
+                <li>Unity</li>
+                <li>Embedded Systems</li>
+                <li>CSWA Certified</li>
+                <li>Solid Modeling</li>
+                <li>Software Development Models</li>
+                <li>Google Suite</li>
+            </ul>
+        </div>
+    </div>
+    
 
-    <!-- Coursework -->
-    <!-- One long list now, but use css to make it a 4x4 grid-->
-    <h3 id="coursework" class="blue">Coursework</h3>
-    <ul id="grid-coursework-container">
-        <li>Software Construction</li>
-        <li>Database Management Systems</li>
-        <li>Intro to Artificial Intelligence</li>
-        <li>Virtual Reality</li>
-        <li>Professional Development & Mentoring</li>
-        <li>Discrete Structures</li>
-        <li>Intermediate Data Structures & Algorithms</li>
-        <li>Automata and Formal Languages</li>
-        <li>Compiler Design</li>
-        <li>Design of Operating Systems</li>
-        <li>Design & Architecture of Computer Systems</li>
-        <li>Logic Design</li>
-        <li>Intro to Embedded Systems</li>
-        <li>Technical Communications</li>
-        <li>Probability & Statistics</li>
-        <li>Data Analysis Methods</li>
-    </ul>
-
-    <!-- Skills -->
-    <!-- Another grid-like structure with css? -->
-    <h3 id="skills" class="blue">Skills</h3>
-    <ul id="grid-skills-container">
-        <li>C++</li>
-        <li>HTML</li>
-        <li>SQL</li>
-        <li>Git/Github</li>
-        <li>Unity</li>
-        <li>Embedded Systems</li>
-        <li>CSWA Certified</li>
-        <li>Solid Modeling</li>
-        <li>Software Development Models</li>
-        <li>Google Suite</li>
-    </ul>
-
-    <!-- Projects -->
-    <!-- Use a table for nice organizational looks? -->
-    <!-- Consider using an icon for the links instead of the words?-->
-    <h3 id="projects" class="blue">Projects</h3>
-    <table>
-        <!-- Aaron's Virtual Bookstore -->
-        <tr>
-            <td class="left"><span class="green bold-element">Aaron's Virtual Bookstore</span></td>
-            <td class="right"><a href="https://github.com/abant006/AaronsVirtualBookstore" target="_vblank">Github Link</a></td> <!-- Modify how links look with css later -->
-        </tr>
-        <tr>
-            <td colspan="2">Constructued a virtual bookstore operated through the terminal. Allows users to perform CRUD operations on available books.
-                            Designed Admin/Customer users that can access different levels and permissions of the bookstore. Created the ability to filter
-                            the store list by ascending ID's by using the selection sort algoroithm.
-            </td>
-        </tr>
-        <!-- Hotel Chain Database Management System -->
-        <tr>
-            <td class="left"><span class="green bold-element">Hotel Chain Database Management System</span></td>
-            <td class="right"><a href="https://github.com/abant006/Hotel-Chain-Database-Management-System" target="_vblank">Github Link</a></td>
-        </tr>
-        <tr>
-            <td colspan="2">Created SQL queries to simplify data retrieval and updates in a pseudo hotel chain database management system. Created the
-                            ability for users to login/create new accounts to browse hotels and rooms within the hotel chain, book rooms, and browse their booking history.
-                            Extended functionality for Admin users to also update room information in hotels they manage, see all booking information in a hotel, and see 
-                            the top 5 customers who made the most bookings in a specific hotel they manage.
-            </td>
-        </tr>
-        <!-- Can You Escape? -->
-        <tr>
-            <td class="left"><span class="green bold-element">Can You Escape?</span></td>
-            <td class="right"><a href="https://abant006.itch.io/can-you-escape" target="_vblank">Itch.io Link</a></td>
-        </tr>
-        <tr>
-            <td colspan="2">Developed a VR escape room experience using Unity. Consists of 2 puzzle rooms furnished with free assets. Created buttons that reacts to player
-                            touch to emulate reality. Connected the buttons with global text boxes using C# to dynamically change the text based on input.
-                            Wrote C# scripts to teleport users and unlock hidden puzzles based on correct button sequences or number combinations.
-            </td>
-        </tr>
-        <!-- Arduino Racer Game -->
-        <tr>
-            <td class="left"><span class="green bold-element">Aduino Racer Game</span></td>
-            <td class="right"><a href="https://github.com/abant006/ArduinoRacerGame" target="_vblank">Github Link</a></td>
-        </tr>
-        <tr>
-            <td colspan="2">Created a racing game designed for the Arduino which is displayed via a liquid crystal display. Implemented a multi-sync state machine design to tie
-                            together generation logic with physical button actuations. Designed a function which utilizes rand() to determine if and where an object should/should not
-                            be generated.
-            </td>
-        </tr>
-        <!-- This Website! -->
-        <tr>
-            <td class="left"><span class="green bold-element">This (Personal) Website!</span></td>
-            <td class="right"><a href="https://github.com/abant006/Aaron-Bantay-Personal-Website.git" target="_vblank">Github Link</a></td>
-        </tr>
-        <tr>
-            <td colspan="2">Developed a website using HTML (so far) to describe myself. Broke down each section using header elements each classified with their own id's. Grouped together different
-                            inline words and elements using classes to specify colors, letter type(bold), or positioning. Utilized different structures (tables, unordered lists, etc.) to structure the layout of the webpage.
-            </td>
-        </tr>
-    </table>
+    <div id="projects-section" class="minimal-margin-extend">
+        <!-- Projects -->
+        <!-- Use a table for nice organizational looks? -->
+        <!-- Consider using an icon for the links instead of the words?-->
+        <h3 id="projects" class="blue">Projects</h3>
+        <table>
+            <!-- Aaron's Virtual Bookstore -->
+            <tr>
+                <td class="left minimal-padding-bot-extend"><span class="green bold-element">Aaron's Virtual Bookstore</span></td>
+                <td class="right minimal-padding-bot-extend"><a href="https://github.com/abant006/AaronsVirtualBookstore" target="_vblank">Github Link</a></td> <!-- Modify how links look with css later -->
+            </tr>
+            <tr>
+                <td colspan="2" class="medium-padding-bot-extend">Constructued a virtual bookstore operated through the terminal. Allows users to perform CRUD operations on available books.
+                                Designed Admin/Customer users that can access different levels and permissions of the bookstore. Created the ability to filter
+                                the store list by ascending ID's by using the selection sort algoroithm.
+                </td>
+            </tr>
+            <!-- Hotel Chain Database Management System -->
+            <tr>
+                <td class="left minimal-padding-bot-extend"><span class="green bold-element">Hotel Chain Database Management System</span></td>
+                <td class="right minimal-padding-bot-extend"><a href="https://github.com/abant006/Hotel-Chain-Database-Management-System" target="_vblank">Github Link</a></td>
+            </tr>
+            <tr>
+                <td colspan="2" class="medium-padding-bot-extend">Created SQL queries to simplify data retrieval and updates in a pseudo hotel chain database management system. Created the
+                                ability for users to login/create new accounts to browse hotels and rooms within the hotel chain, book rooms, and browse their booking history.
+                                Extended functionality for Admin users to also update room information in hotels they manage, see all booking information in a hotel, and see 
+                                the top 5 customers who made the most bookings in a specific hotel they manage.
+                </td>
+            </tr>
+            <!-- Can You Escape? -->
+            <tr>
+                <td class="left minimal-padding-bot-extend"><span class="green bold-element">Can You Escape?</span></td>
+                <td class="right minimal-padding-bot-extend"><a href="https://abant006.itch.io/can-you-escape" target="_vblank">Itch.io Link</a></td>
+            </tr>
+            <tr>
+                <td colspan="2" class="medium-padding-bot-extend">Developed a VR escape room experience using Unity. Consists of 2 puzzle rooms furnished with free assets. Created buttons that reacts to player
+                                touch to emulate reality. Connected the buttons with global text boxes using C# to dynamically change the text based on input.
+                                Wrote C# scripts to teleport users and unlock hidden puzzles based on correct button sequences or number combinations.
+                </td>
+            </tr>
+            <!-- Arduino Racer Game -->
+            <tr>
+                <td class="left minimal-padding-bot-extend"><span class="green bold-element">Aduino Racer Game</span></td>
+                <td class="right minimal-padding-bot-extend"><a href="https://github.com/abant006/ArduinoRacerGame" target="_vblank">Github Link</a></td>
+            </tr>
+            <tr>
+                <td colspan="2" class="medium-padding-bot-extend">Created a racing game designed for the Arduino which is displayed via a liquid crystal display. Implemented a multi-sync state machine design to tie
+                                together generation logic with physical button actuations. Designed a function which utilizes rand() to determine if and where an object should/should not
+                                be generated.
+                </td>
+            </tr>
+        </table>
+    </div>
 
 </body>
 
