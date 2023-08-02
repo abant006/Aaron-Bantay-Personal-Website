@@ -54,6 +54,12 @@ h2 {
 .bold-element {
     font-weight: bold;
 }
+
+.icons {
+    width: 30px;
+    height: 30px;
+}
+
 /* Concerning the main header */
 
 #name {
@@ -80,13 +86,14 @@ h2 {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    margin-top: 25px;
     display: flex; /* Using flex box to make column list into horizontal */
     justify-content: center; /* centering the list to the middle of the div box */
 }
 
 /* Add some spacing between each list item in socials list */
 #socials li {
-    margin-right: 10px;
+    margin-right: 60px;
 }
 
 /* since I added space between EACH list item, I need to remove that space from the last one */
