@@ -3,26 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <title>Aaron Bantay</title>
+
+    <style>
+        /* Adding custom font */
+        @font-face{
+            font-family: helvetica-neue-medium;
+            src: url(/fonts/Helvetica\ Neue\ Medium\ Extended.ttf);
+        }
+        
+        /* Adding another custom font */
+        @font-face{
+            font-family: Gyahegi;
+            src: url(/fonts/Gyahegi.otf);
+        }
+
+        html {
+            font-size: 16px; /* setting a universal font size to be adjusted using rem */
+        }
+
+        body {
+            font-size: 1rem;
+            font-family: helvetica-neue-medium, Arial, sans-serif;
+        }
+
+        h1 {
+            font-family: Gyahegi, helvetica-neue-medium, Arial, sans-serif;
+        }
+
+        #main-header {
+            text-align: center;
+        }
+
+        #subheading {
+            font-size: 1.2rem; /* A little size change to my sub heading */
+            text-align: center;
+        }
+
+
+    </style>
+
 </head>
 
 <body>
+
+    <div id="main-header">
+        <h1 id="name" class="blue">Aaron Bantay</h1>
+
+        <!-- Subheading -->
+        <h2 id="subheading" class="blue">Student of Computer Science at University of California, Riverside</h2>
+
+        <!-- socials; using an unordered list for organization/look wise for CSS -->
+        <ul id="socials"> <!-- Think about making the words icons instead -->
+            <li><a href="https://github.com/abant006" target="_vblank">Github</a></li>
+            <li><a href="https://www.linkedin.com/in/aaron-bantay-978097226/" target="_vblank">LinkedIn</a></li>
+            <li><a href="https://www.instagram.com/aaucci/?hl=en" target="_vblank">Personal Instagram</a></li>
+            <li><a href="https://www.instagram.com/flmcci/?hl=en" target="_vblank">Film Page</a></li>
+            <li><a href="https://www.instagram.com/rugccci/?hl=en" target="_vblank">Rug Account</a></li>
+            <li><a href="mailto:aaronbantay@gmail.com">Email</a></li>
+        </ul>
+    </div>
+
     <!-- Adding photo of me and my name -->
     <!-- Opt for having classes be colors I want text to be? -->
     <img src="/images/AaronHeadshot.jpg" alt="Aaron Bantay Headshot Photo" width="225.14" height="281.43">
-    <h1 id="name" class="blue">Aaron Bantay</h1>
-
-    <!-- socials; using an unordered list for organization/look wise for CSS -->
-    <ul id="socials"> <!-- Think about making the words icons instead -->
-        <li><a href="https://github.com/abant006" target="_vblank">Github</a></li>
-        <li><a href="https://www.linkedin.com/in/aaron-bantay-978097226/" target="_vblank">LinkedIn</a></li>
-        <li><a href="https://www.instagram.com/aaucci/?hl=en" target="_vblank">Personal Instagram</a></li>
-        <li><a href="https://www.instagram.com/flmcci/?hl=en" target="_vblank">Film Page</a></li>
-        <li><a href="https://www.instagram.com/rugccci/?hl=en" target="_vblank">Rug Account</a></li>
-        <li><a href="mailto:aaronbantay@gmail.com">Email</a></li>
-    </ul>
-
-    <!-- Subheading -->
-    <h2 id="subheading" class="blue">Student of Computer Science at University of California, Riverside</h2>
 
     <!-- About section -->
     <h3 id="about" class="blue">About me</h3>
@@ -153,16 +196,6 @@
             <td colspan="2">Created a racing game designed for the Arduino which is displayed via a liquid crystal display. Implemented a multi-sync state machine design to tie
                             together generation logic with physical button actuations. Designed a function which utilizes rand() to determine if and where an object should/should not
                             be generated.
-            </td>
-        </tr>
-        <!-- This Website! -->
-        <tr>
-            <td class="left"><span class="green bold-element">This (Personal) Website!</span></td>
-            <td class="right"><a href="https://github.com/abant006/Aaron-Bantay-Personal-Website.git" target="_vblank">Github Link</a></td>
-        </tr>
-        <tr>
-            <td colspan="2">Developed a website using HTML (so far) to describe myself. Broke down each section using header elements each classified with their own id's. Grouped together different
-                            inline words and elements using classes to specify colors, letter type(bold), or positioning. Utilized different structures (tables, unordered lists, etc.) to structure the layout of the webpage.
             </td>
         </tr>
     </table>
