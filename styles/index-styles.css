@@ -60,6 +60,31 @@ h2 {
     height: 30px;
 }
 
+#itchio {
+    width: 100px;
+    height: 30px;
+}
+
+a:hover img {
+    width: 35px;
+    height: 35px;
+}
+
+a:active img {
+    width: 35px;
+    height: 35px;
+}
+
+a:hover #itchio {
+    width: 105px;
+    height: 35px;
+}
+
+a:active #itchio {
+    width: 105px;
+    height: 35px;
+}
+
 /* Concerning the main header */
 
 #name {
