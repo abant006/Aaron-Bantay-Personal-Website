@@ -110,6 +110,10 @@
             padding-bottom: 10px;
         }
 
+        .medium-padding-bot-extend {
+            padding-bottom: 20px;
+        }
+
         .minimal-margin-extend {
             margin-top: 40px;
             margin-bottom: 40px;
@@ -132,6 +136,23 @@
         .right {
             text-align: right;
         }
+        
+        .left {
+            text-align: left;
+        }
+        
+
+        /* Education Section */
+
+        #education-section {
+            display: flex; /* using flex box to "fill in" extra space taken up by items inside the box */
+            flex-direction: column; /* default is row but we want column */
+        }
+
+        #education-section tr td:first-child { /* Only want to indent the first td item in each row */
+            padding-left: 20px;
+        }
+
 
     </style>
 
@@ -184,7 +205,7 @@
         <h3 id="work-experience" class ="blue">Work Experience</h3>
         <table>
             <tr> <!-- opt for using a class to specify bold elements instead of using html for it -->
-                <td class="minimal-padding-bot-extend"><span class="green bold-element">Brookdale San Marcos</span>, Food Server</td>
+                <td class="left minimal-padding-bot-extend"><span class="green bold-element">Brookdale San Marcos</span>, Food Server</td>
                 <td class="right minimal-padding-bot-extend">November 2019 - February 2020</td> <!-- Date class for CSS aligning purposes -->
             </tr>
             <tr>
@@ -194,20 +215,23 @@
         </table>
     </div>
 
-    <!-- Education -->
-    <h3 id="education" class="blue">Education</h3>
-    <table>
-        <tr>
-            <td class="left">Associates Degree for Transfer, Mathematics</td>
-            <td class="center">Palomar College</td>
-            <td class="right">2019 - 2021</td>
-        </tr>
-        <tr>
-            <td class="left">Bachelor of Science, Computer Science <span class="bold-element">(In Progress)</span></td>
-            <td class="center">University of California, Riverside</td>
-            <td class="right">2021 - Present</td>
-        </tr>
-    </table>
+    <div id="education-section" class="minimal-margin-extend">
+        <!-- Education -->
+        <h3 id="education" class="blue">Education</h3>
+        <table>
+            <tr>
+                <td class="left medium-padding-bot-extend">Associates in Science for Transfer, Mathematics</td>
+                <td class="center medium-padding-bot-extend">Palomar College</td>
+                <td class="right medium-padding-bot-extend">2019 - 2021</td>
+            </tr>
+            <tr>
+                <td class="left">Bachelor of Science, Computer Science <span class="bold-element">(In Progress)</span></td>
+                <td class="center">University of California, Riverside</td>
+                <td class="right">2021 - Present</td>
+            </tr>
+        </table>
+    </div>
+    
 
     <!-- Coursework -->
     <!-- One long list now, but use css to make it a 4x4 grid-->
