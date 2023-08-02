@@ -104,6 +104,35 @@
             flex-direction: column; /* Stack the text elements vertically */
         }
 
+        /* RULES FOR COMMON MARGIN/PADDING EXTENSIONS SITE WIDE */
+        
+        .minimal-padding-bot-extend {
+            padding-bottom: 10px;
+        }
+
+        .minimal-margin-extend {
+            margin-top: 40px;
+            margin-bottom: 40px;
+            margin-left: 25px;
+            margin-right: 25px;
+        }
+
+        /* Work Experience */
+
+        #work-experience-section {
+            /*background-color: aquamarine;*/ /*FOR TESTING USES */
+        }
+
+        /* Indenting descriptions in tables where the td colspan value = 2 */
+        td[colspan="2"] {
+            padding-left: 20px;
+            text-align: justify;
+        }
+
+        .right {
+            text-align: right;
+        }
+
     </style>
 
 </head>
@@ -150,18 +179,20 @@
 
     <!-- Maybe add some photos here showing a few film photos and some rugs?? -->
 
-    <!-- Work Experience -->
-    <h3 id="work-experience" class ="blue">Work Experience</h3>
-    <table>
-        <tr> <!-- opt for using a class to specify bold elements instead of using html for it -->
-            <td><span class="green bold-element">Brookdale San Marcos</span>, Food Server</td>
-            <td class="right">November 2019 - February 2020</td> <!-- Date class for CSS aligning purposes -->
-        </tr>
-        <tr>
-            <td colspan="2">Diligently communicated with the residents and took their food orders. Worked closely with the chefs in the kitchen to make sure each resident's meal was prepared correctly.
-                            Cleaned and organized the kitchen and dining area for the opening workers, ensuring a smooth start for the next day of work.</td>
-        </tr>
-    </table>
+    <div id="work-experience-section" class="minimal-margin-extend">
+        <!-- Work Experience -->
+        <h3 id="work-experience" class ="blue">Work Experience</h3>
+        <table>
+            <tr> <!-- opt for using a class to specify bold elements instead of using html for it -->
+                <td class="minimal-padding-bot-extend"><span class="green bold-element">Brookdale San Marcos</span>, Food Server</td>
+                <td class="right minimal-padding-bot-extend">November 2019 - February 2020</td> <!-- Date class for CSS aligning purposes -->
+            </tr>
+            <tr>
+                <td colspan="2">Diligently communicated with the residents and took their food orders. Worked closely with the chefs in the kitchen to make sure each resident's meal was prepared correctly.
+                                Cleaned and organized the kitchen and dining area for the opening workers, ensuring a smooth start for the next day of work.</td>
+            </tr>
+        </table>
+    </div>
 
     <!-- Education -->
     <h3 id="education" class="blue">Education</h3>
