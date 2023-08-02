@@ -33,6 +33,7 @@
         }
 
         p {
+            line-height: 1.5rem;
             margin-top: 5px;
             margin-bottom: 10px;
             padding: 0;
@@ -131,6 +132,7 @@
         td[colspan="2"] {
             padding-left: 20px;
             text-align: justify;
+            line-height: 1.75rem;
         }
 
         .right {
@@ -154,15 +156,31 @@
         }
 
         /* Coursework Section */
-        #coursework-section li{ /* Changing the bullet type to a square and adding space between each bullet point */
+
+        #coursework-section li, #skills-section li{ /* Changing the bullet type to a square and adding space between each bullet point */
             list-style-type: square;
             margin-bottom: 10px;
         }
 
-        #coursework-section li:last-child { /* just removing the margin added to the last list item (bottom one) */
+        #coursework-section li:last-child, #skills-section li:last-child { /* just removing the margin added to the last list item (bottom one) */
             margin-bottom: 0;
         }
 
+        /* Skills Section */
+
+
+        /* Combining skills and coursework section to use a flexbox to line them horizontally */
+        #coursework-skills-container {
+            display: flex;
+            padding: 0;
+        }
+
+        /* add some space between */
+        #coursework-section {
+            margin-right: 340px;
+            padding: 0;
+        }
+        
 
     </style>
 
@@ -242,39 +260,42 @@
         </table>
     </div>
     
-
-    <div id="coursework-section" class="minimal-margin-extend">
-        <!-- Coursework -->
-        <h3 id="coursework" class="blue">Coursework</h3>
-        <ul id="grid-coursework-container">
-            <li>Software Construction</li>
-            <li>Database Management Systems</li>
-            <li>Intro to Artificial Intelligence</li>
-            <li>Virtual Reality</li>
-            <li>Data Analysis Methods</li>
-            <li>Intermediate Data Structures & Algorithms</li>
-            <li>Design of Operating Systems</li>
-            <li>Design & Architecture of Computer Systems</li>
-            <li>Intro to Embedded Systems</li>
-        </ul>
+    <div id="coursework-skills-container" class="minimal-margin-extend">
+        <div id="coursework-section">
+            <!-- Coursework -->
+            <h3 id="coursework" class="blue">Coursework</h3>
+            <ul id="grid-coursework-container">
+                <li>Software Construction</li>
+                <li>Database Management Systems</li>
+                <li>Intro to Artificial Intelligence</li>
+                <li>Virtual Reality</li>
+                <li>Data Analysis Methods</li>
+                <li>Intermediate Data Structures & Algorithms</li>
+                <li>Design of Operating Systems</li>
+                <li>Design & Architecture of Computer Systems</li>
+                <li>Intro to Embedded Systems</li>
+            </ul>
+        </div>
+        
+    
+        <div id="skills-section">
+            <!-- Skills -->
+            <h3 id="skills" class="blue">Skills</h3>
+            <ul id="grid-skills-container">
+                <li>C++</li>
+                <li>HTML</li>
+                <li>SQL</li>
+                <li>Git/Github</li>
+                <li>Unity</li>
+                <li>Embedded Systems</li>
+                <li>CSWA Certified</li>
+                <li>Solid Modeling</li>
+                <li>Software Development Models</li>
+                <li>Google Suite</li>
+            </ul>
+        </div>
     </div>
     
-
-    <!-- Skills -->
-    <!-- Another grid-like structure with css? -->
-    <h3 id="skills" class="blue">Skills</h3>
-    <ul id="grid-skills-container">
-        <li>C++</li>
-        <li>HTML</li>
-        <li>SQL</li>
-        <li>Git/Github</li>
-        <li>Unity</li>
-        <li>Embedded Systems</li>
-        <li>CSWA Certified</li>
-        <li>Solid Modeling</li>
-        <li>Software Development Models</li>
-        <li>Google Suite</li>
-    </ul>
 
     <!-- Projects -->
     <!-- Use a table for nice organizational looks? -->
