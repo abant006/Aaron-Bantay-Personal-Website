@@ -17,6 +17,12 @@
             src: url(/fonts/Gyahegi.otf);
         }
 
+        /* Adding another custom font */
+        @font-face{
+            font-family: Misto;
+            src: url(/fonts/Misto.ttf)
+        }
+
         html {
             font-size: 16px; /* setting a universal font size to be adjusted using rem */
         }
@@ -26,19 +32,77 @@
             font-family: helvetica-neue-medium, Arial, sans-serif;
         }
 
-        h1 {
-            font-family: Gyahegi, helvetica-neue-medium, Arial, sans-serif;
+        p {
+            margin-top: 5px;
+            margin-bottom: 10px;
+            padding: 0;
         }
 
-        #main-header {
+        h2 {
+            font-size: 2.5rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Concerning the main header */
+
+        #name {
+            font-size: 4rem;
+            font-family: Misto, helvetica-neue-medium, Arial, sans-serif;
+            margin-top: 20px;
+            margin-bottom: 0;
+            
+        }
+
+        #main-header { /* div container for the entire heading section (name, subheading, socials) */
             text-align: center;
+            margin-bottom: 30px;
         }
 
         #subheading {
             font-size: 1.2rem; /* A little size change to my sub heading */
             text-align: center;
+            margin-top: 0.5px;
+            margin-bottom: 10px;
         }
 
+        #socials { /* for the socials list, I am removing the bullets and removing extra padding/margin space */
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex; /* Using flex box to make column list into horizontal */
+            justify-content: center; /* centering the list to the middle of the div box */
+        }
+
+        /* Add some spacing between each list item in socials list */
+        #socials li {
+            margin-right: 10px;
+        }
+
+        /* since I added space between EACH list item, I need to remove that space from the last one */
+        #socials li:last-child {
+            margin-right: 0;
+        }
+
+        /* Headshot image and About me section */
+
+        #image-about-me {
+            display: flex; /* Using flex box to line items in div horizontally */
+            align-items: flex-start; /* Allign items starting from the top of the box */
+            margin: 0 20px 30px 30px; /* standard top bottom left right margin values */
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        
+        #image-about-me img {
+            margin-right: 20px; /* Space between photo and about me section */
+            align-self: center; /* Only want to align the picture to the middle left, since we already align-items to the top in main div container */
+        }
+
+        #image-about-me #paragraph-area {
+            display: flex;
+            flex-direction: column; /* Stack the text elements vertically */
+        }
 
     </style>
 
@@ -63,22 +127,26 @@
         </ul>
     </div>
 
-    <!-- Adding photo of me and my name -->
-    <!-- Opt for having classes be colors I want text to be? -->
-    <img src="/images/AaronHeadshot.jpg" alt="Aaron Bantay Headshot Photo" width="225.14" height="281.43">
+    <div id="image-about-me">
+        <!-- Adding photo of me and my name -->
+        <!-- Opt for having classes be colors I want text to be? -->
+        <img src="/images/AaronHeadshot.jpg" alt="Aaron Bantay Headshot Photo" width="225.14" height="281.43">
 
-    <!-- About section -->
-    <h3 id="about" class="blue">About me</h3>
-    <p> Hello, My name is Aaron Bantay, and I would first like to thank you for taking the time to view
-        my website. I was born and raised in San Diego, California, but I am currently a student at the <span class="maroon bold-element">University of California, Riverside</span>, studying computer science.</p>
-    <p> Aside from coding, I enjoy shooting <span class="maroon bold-element">film photography</span>. Although I have a couple of rolls shot under my belt,
-        I am still looking to improve my craft. I also enjoy making <span class="maroon bold-element">rugs/tufting</span>. It's been an interest of mine for a while,
-        and I've finally gotten the chance to do so! My favorite sports team is the <span class="maroon bold-element">San Diego Padres</span>, but I also follow <span class="maroon bold-element">AC Milan</span> in Serie A. As far
-        as music goes, I listen almost any chance I can get (I am probably listening as I am writing this!). I primarily enjoy <span class="maroon bold-element">Hip Hop, Indie Pop, Jazz and 
-        R&B</span>. My favorite artists are <span class="maroon bold-element">Frank Sinatra, Bill Evans, Travis Scott, and Wave to Earth</span>. As a way to wind down, I read books! I am currently reading
-        <span class="maroon bold-element">"The Way of Kings"</span> by Brandon Sanderson.
-    </p>
-    <p> I hope to be able to use my skills in web development to create websites for my hobbies. A website showcasing my film photos is one on my todo list! Please keep an eye out for that!</p>
+        <div id="paragraph-area">
+            <!-- About section -->
+            <h3 id="about" class="blue">About me</h3>
+            <p> Hello, My name is Aaron Bantay, and I would first like to thank you for taking the time to view
+                my website. I was born and raised in San Diego, California, but I am currently a student at the <span class="maroon bold-element">University of California, Riverside</span>, studying computer science.</p>
+            <p> Aside from coding, I enjoy shooting <span class="maroon bold-element">film photography</span>. Although I have a couple of rolls shot under my belt,
+                I am still looking to improve my craft. I also enjoy making <span class="maroon bold-element">rugs/tufting</span>. It's been an interest of mine for a while,
+                and I've finally gotten the chance to do so! My favorite sports team is the <span class="maroon bold-element">San Diego Padres</span>, but I also follow <span class="maroon bold-element">AC Milan</span> in Serie A. As far
+                as music goes, I listen almost any chance I can get (I am probably listening as I am writing this!). I primarily enjoy <span class="maroon bold-element">Hip Hop, Indie Pop, Jazz and 
+                R&B</span>. My favorite artists are <span class="maroon bold-element">Frank Sinatra, Bill Evans, Travis Scott, and Wave to Earth</span>. As a way to wind down, I read books! I am currently reading
+                <span class="maroon bold-element">"The Way of Kings"</span> by Brandon Sanderson.
+            </p>
+            <p> I hope to be able to use my skills in web development to create websites for my hobbies. A website showcasing my film photos is one on my todo list! Please keep an eye out for that!</p>
+        </div> 
+    </div>
 
     <!-- Maybe add some photos here showing a few film photos and some rugs?? -->
 
